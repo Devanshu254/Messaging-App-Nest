@@ -19,4 +19,7 @@ export class MessagesServices {
     async delete(id: string): Promise<void> {
         return this.messagesRepo.delete(id);
     }
+    async update(id: string, newContent: string): Promise<void> {
+        return this.messagesRepo.update(id, newContent);
+    }
 }

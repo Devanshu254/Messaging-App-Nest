@@ -32,4 +32,15 @@ export class MessagesRepository {
             throw new Error(`Message with ID ${id} not found`);
         }
     }
-}
+    async update(id: string, newContent: string): Promise<void> {
+        const contents = await readFile('messages.json', 'utf8');
+        const messages = JSON.parse(contents);
+
+        if(messages[id]) {
+            messages[id].content = newContent;
+            await writeFile('messages.json', JSON.stringify(messages));
+        }else {
+            throw new Error(`Messages with Id ${id} not found`);
+        }
+    }
+ }

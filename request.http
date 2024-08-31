@@ -14,5 +14,10 @@ GET http://localhost:3000/messages/342
 ### Delete a message by Id
 DELETE http://localhost:3000/messages/342
 
-### List all messages
-GET http://localhost:3000/messages
+### Update
+PUT http://localhost:3000/messages/328
+Content-Type: application/json 
+
+{
+    "content": "Updated the content"
+}
